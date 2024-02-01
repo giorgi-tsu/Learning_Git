@@ -7,6 +7,11 @@
 
 #******************************************************************#
 
+# ბიბლიოთეკების შემოტანა
+
+import math
+
+
 print("\n",
       "-------------------- სავარჯიშო 1 --------------------", "\n")
 
@@ -20,22 +25,33 @@ class Circle:
     def __init__(self, radius):
         self.radius = radius
 
-    def area(self):
-        return 3.14*self.radius**2
-    
-    def perimeter(self):
-        return 2*3.14*self.radius
+    def calc_area(self):
+        area = math.pi * (self.radius ** 2)
+        return area
+
+    def calc_perimeter(self):
+        perimeter = 2 * math.pi * self.radius
+        return perimeter
 
 # კლასის შემოწმება
 
-test_circle = Circle(1)
+radius = 1
+circle_instance = Circle(radius)
 
-print(test_circle.area())
-print(test_circle.perimeter())
+print(f"Area of a circle with radius of {radius}: "
+      f"{circle_instance.calc_area()}")
+       
+print(f"Perimeter of a circle with radius of {radius}: "
+      f"{circle_instance.calc_perimeter()}")
 
 
 print("\n",
       "-------------------- სავარჯიშო 2 --------------------", "\n")
+
+## სავარჯიშო 2
+
+# შექმენი კალკულატორის კლასი, საბაზისო არითმეტიკული ოპერაციების
+# მეთოდებით.
 
 ## სავარჯიშო 2
 
@@ -47,7 +63,7 @@ class Calc:
     def __init__(self, number1, number2):
         self.number1 = number1
         self.number2 = number2
-    
+
     def add(self):
         return self.number1 + self.number2
 
@@ -62,11 +78,11 @@ class Calc:
 
 # კლასის შემოწმება
 
-test_calc = Calc(10,2)
-print(test_calc.add())
-print(test_calc.subtract())
-print(test_calc.multiply())
-print(test_calc.divide())
+calc_instance = Calc(10,2)
+print(calc_instance.add())
+print(calc_instance.subtract())
+print(calc_instance.multiply())
+print(calc_instance.divide())
 
 
 print("\n",
@@ -79,44 +95,55 @@ print("\n",
 # ასევე კალათაში არსებული პროდუქტების სიისა და
 # ჯამური ღირებულების გამოსატანად. 
 
-class Basket:
+
+class ShoppingBasket:
 
     def __init__(self):
-        
+
         self.item_prices = {}
         self.item_quantities = {}
 
     def add_item(self, item, quantity, price):
         self.item_quantities[item] = quantity
         self.item_prices[item] = price
-    
+
     def delete_item(self, item):
         del self.item_quantities[item]
         del self.item_prices[item]
 
     def get_shopping_list(self):
         return list(self.item_quantities.keys())
-    
-    # def total_basket_value(self):
-        
-    #     return 
 
-carrefour_basket = Basket()
-carrefour_basket.add_item("Milka", 2, 2)
-carrefour_basket.add_item("Sante", 3, 1)
-carrefour_basket.add_item("Koda", 3, 5)
-# carrefour_basket.delete_item("Sante")
-print(carrefour_basket.get_shopping_list())
-print(carrefour_basket.item_prices)
-print(carrefour_basket.item_quantities)
+    def total_basket_value(self):
+        total_value = 0
+        for p, q in zip(self.item_prices.values(),
+                        self.item_quantities.values()):
+          total_value += p * q
+        return total_value
+
+basket_instance = ShoppingBasket()
+
+# Adding items to the shopping basket
+
+basket_instance.add_item("Milka", 2, 2)
+basket_instance.add_item("Sante", 3, 1)
+basket_instance.add_item("Koda", 3, 5)
+
+print(f"Shopping List: {basket_instance.get_shopping_list()}")
+print(f"Item Prices: {basket_instance.item_prices}")
+print(f"Item Quantities: {basket_instance.item_quantities}")
+
+basket_instance.delete_item("Sante")  # Deleting "Sante" from 
+# the shopping basket
+
+print(f"Shopping List: {basket_instance.get_shopping_list()}")
+print(f"Item Prices: {basket_instance.item_prices}")
+print(f"Item Quantities: {basket_instance.item_quantities}")
 
 
-print("\n",
-      "-------------------- სავარჯიშო 3 --------------------", "\n")
 
-## სავარჯიშო 4
-
-
+print(f"Total Value of Shopping List: "
+      f"{basket_instance.total_basket_value()}")
 
 
 #------------------------------------------------------------------#
