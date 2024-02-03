@@ -29,10 +29,24 @@ print("\n",
 # მიმდინარე ლექციის თემა (L17_2024-01-29-00-04-30)
 
 print("\n",
-	"-------------------------- part 1 --------------------------",
-	"\n")
+    "-------------------------- part 1 --------------------------",
+    "\n")
 
+# print(os.getcwd())
+# os.chdir(r".\Lectures")  # სამუშაო დირექტორიის შეცვლა.
 print(os.getcwd())
-os.chdir(r".\Lectures")  # სამუშაო დირექტორიის შეცვლა.
-print(os.getcwd())
+
+class Car:
+    @staticmethod
+    def moving():
+        print("I am moving")
+
+class Bmw:
+    @staticmethod
+    def represent():
+        print("I am BMW!")
+
+car1 = Bmw()
+print(Bmw)
+
 
