@@ -188,4 +188,10 @@ car1 = BMW("X5", 2000, 2)
 # print(car1.wings)
 # car1.moving()
 
-print(car1.wings, car1.year)
+# print(car1.wings, car1.year)
+
+##############
+
+# polimorphism slides (L17_2024-01-29-00-41-10)
+
+# Encapsulation slides (L17_2024-01-29-00-42-30)
