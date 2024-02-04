@@ -198,22 +198,19 @@ print(os.getcwd())
 
 # Encapsulation (L17_2024-01-29-00-44-21)
 
-class Car:
-    def __init__(self, model, year, price=0):
+# class Car:
+#     def __init__(self, model, year, price=0):
         
-        assert type(model) is str, "Enter Sting in model field"
-        assert year > 2010, "Only cars since 2010"
-        assert price >= 0, "Non-negative prices are allowed"
-        self.model = model
-        self.year = year
-        self.price = price
+#         assert type(model) is str, "Enter Sting in model field"
+#         assert year > 2010, "Only cars since 2010"
+#         assert price >= 0, "Non-negative prices are allowed"
+#         self.model = model
+#         self.year = year
+#         self.price = price
     
-    @property
-    def model(self):
-        print("Cann't change me")
-
-car1 = Car("BMW X6", 2020, 1100)
+# car1 = Car("BMW X6", 2020, 1100)
 # print(car1.price)
 # car1.price = 1000
 # print(car1.price)
-# car1.unchangeable()
+
+#####################################
