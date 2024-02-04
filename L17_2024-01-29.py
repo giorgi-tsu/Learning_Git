@@ -69,8 +69,9 @@ class Georgian(Human):
 print(Human.hands)
 print(Georgian.hands)
 print(Georgian.race)
-print(Human.sings())
-print(Georgian.sings())
+Human.sings()
+(Georgian.sings())
 
 
+# მრავადონიანი მემკვიდრეობითობა (L17_2024-01-29-00-27-30)
 
