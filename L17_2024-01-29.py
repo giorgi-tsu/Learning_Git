@@ -150,39 +150,39 @@ print(os.getcwd())
 
 #  2 მშობელი (L17_2024-01-29-00-36-10)
 
-class Car:
-    wheels = 4
+# class Car:
+#     wheels = 4
 
-    def __init__(self, year):
-        self.year = year
+#     def __init__(self, year):
+#         self.year = year
     
-    @staticmethod
-    def moving():
-        print("Car is moving")
+#     @staticmethod
+#     def moving():
+#         print("Car is moving")
 
-class Jet:
-    def __init__(self, wings):
-        self.wings = wings
+# class Jet:
+#     def __init__(self, wings):
+#         self.wings = wings
 
-    @staticmethod
-    def flying():
-        print("Jet is flying!")
+#     @staticmethod
+#     def flying():
+#         print("Jet is flying!")
 
-    @staticmethod
-    def moving():
-        print("Jet is moving")
+#     @staticmethod
+#     def moving():
+#         print("Jet is moving")
 
 
-class BMW(Car, Jet):
-    def __init__(self, model, year, wings):
-        self.model = model
-        # super().__init__(year)
-        Car.__init__(self, year)
-        Jet.__init__(self, wings)
-    def represent(self):
-        print(f"This is {self.model}")
+# class BMW(Car, Jet):
+#     def __init__(self, model, year, wings):
+#         self.model = model
+#         # super().__init__(year)
+#         Car.__init__(self, year)
+#         Jet.__init__(self, wings)
+#     def represent(self):
+#         print(f"This is {self.model}")
 
-car1 = BMW("X5", 2000, 2)
+# car1 = BMW("X5", 2000, 2)
 # car1.represent()
 # car1.moving()
 # print(car1.wings)
@@ -195,3 +195,25 @@ car1 = BMW("X5", 2000, 2)
 # polimorphism slides (L17_2024-01-29-00-41-10)
 
 # Encapsulation slides (L17_2024-01-29-00-42-30)
+
+# Encapsulation (L17_2024-01-29-00-44-21)
+
+class Car:
+    def __init__(self, model, year, price=0):
+        
+        assert type(model) is str, "Enter Sting in model field"
+        assert year > 2010, "Only cars since 2010"
+        assert price >= 0, "Non-negative prices are allowed"
+        self.model = model
+        self.year = year
+        self.price = price
+    
+    @property
+    def model(self):
+        print("Cann't change me")
+
+car1 = Car("BMW X6", 2020, 1100)
+# print(car1.price)
+# car1.price = 1000
+# print(car1.price)
+# car1.unchangeable()
