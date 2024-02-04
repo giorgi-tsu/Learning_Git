@@ -37,16 +37,40 @@ print("\n",
 print(os.getcwd())
 
 class Car:
+    wheels = 4
     @staticmethod
     def moving():
         print("I am moving")
 
-class Bmw:
+class Bmw(Car):
     @staticmethod
     def represent():
         print("I am BMW!")
 
 car1 = Bmw()
-print(Bmw)
+print(car1.wheels)
+
+
+# დავალება 1
+
+class Human:
+    hands = 2
+    legs = 2
+    @staticmethod
+    def sings():
+        print("Human sings")
+
+class Georgian(Human):
+    race = "white"
+    @staticmethod
+    def dances():
+        print("Dances Georgian Dance")
+
+print(Human.hands)
+print(Georgian.hands)
+print(Georgian.race)
+print(Human.sings())
+print(Georgian.sings())
+
 
 
