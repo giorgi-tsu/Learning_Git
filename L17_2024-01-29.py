@@ -121,6 +121,34 @@ print(os.getcwd())
 # car1.flying()
 # car1.moving()
 
+#######################
+
+
+# class Car:
+#     wheels = 4
+
+#     def __init__(self, year):
+#         self.year = year
+    
+#     @staticmethod
+#     def moving():
+#         print("Car is moving")
+
+# class BMW(Car):
+#     def __init__(self, model, year):
+#         self.model = model
+#         super().__init__(year)
+#     def represent(self):
+#         print(f"This is {self.model}")
+
+# car1 = BMW("X5", 2000)
+# # car1.represent()
+# # car1.moving()
+# print(car1.year) 
+
+############
+
+#  2 მშობელი (L17_2024-01-29-00-36-10)
 
 class Car:
     wheels = 4
@@ -132,14 +160,32 @@ class Car:
     def moving():
         print("Car is moving")
 
-class BMW(Car):
-    def __init__(self, model, year):
+class Jet:
+    def __init__(self, wings):
+        self.wings = wings
+
+    @staticmethod
+    def flying():
+        print("Jet is flying!")
+
+    @staticmethod
+    def moving():
+        print("Jet is moving")
+
+
+class BMW(Car, Jet):
+    def __init__(self, model, year, wings):
         self.model = model
-        super().__init__(year)
+        # super().__init__(year)
+        Car.__init__(self, year)
+        Jet.__init__(self, wings)
     def represent(self):
         print(f"This is {self.model}")
 
-car1 = BMW("X5", 2000)
+car1 = BMW("X5", 2000, 2)
 # car1.represent()
 # car1.moving()
-print(car1.year) 
+# print(car1.wings)
+# car1.moving()
+
+print(car1.wings, car1.year)
