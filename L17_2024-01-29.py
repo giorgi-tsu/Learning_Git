@@ -214,3 +214,85 @@ print(os.getcwd())
 # print(car1.price)
 
 #####################################
+# class Student:
+
+#     def __init__(self, firstname, lastname):
+#         self.firstname = firstname
+#         self.lastname = lastname
+    
+#     def get_name(self):
+#         return self.firstname
+    
+#     def set_name(self, text):
+#         self.firstname = text
+    
+# st1 = Student("Giorgi", "Abashidze")
+
+# print(st1.firstname)
+# print(st1.get_name())
+
+# st1.set_name("Daviti")
+# print(st1.get_name())
+
+
+# class MyClass():
+#     def __init__(self):
+#         self.__priv = "I am private"
+#         self._prot = " I am protected"
+#         self.pub = "I am pulic"
+    
+# a = MyClass()
+
+# a.pub += " and I can be modified"
+
+#########################
+
+
+class Car:
+
+    def __init__(self, model, year, price=0):
+        
+        assert type(model) is str, "Enter string in model field"
+        assert year > 2010, "Only cars since 2010"
+        assert price >= 0, "Prices must be non-negative"
+        
+        self.__model = model
+        self._year = year
+        self.price = price
+
+    @property
+    def model(self):
+        return self.__model
+
+    @model.setter
+    def model(self, value):
+        self.__model = value
+
+    # @model.getter
+    # def
+
+
+# car1 = Car("BMW X6", 2020)
+
+# print(car1.model)
+
+# car1.model = 12
+
+# print(car1.price)
+# print(car1._year)
+
+class Car2:
+    def __init__(self, price = 0):
+        self.__model = "BMW"
+        self._year = 2000
+        self.price = price
+
+car = Car2(200)
+
+# class ChildCar(Car2):
+#     def __init__(self, price):
+#         super().__init__(price)
+#         print(self.__model)
+
+# mini_cuper = ChildCar(200)
+
