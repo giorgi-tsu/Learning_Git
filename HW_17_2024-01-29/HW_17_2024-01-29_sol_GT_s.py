@@ -85,6 +85,4 @@ emp1 = EmployeeDivision("Beso", "Navrozashvili", "54006539220", "besarion.NVR@gm
 emp1.print_emp_data()
 
 
-
-
 #------------------------------------------------------------------#
